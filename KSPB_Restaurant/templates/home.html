@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}KS Pulihora & Biryani's{% endblock %}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Custom CSS for Indian restaurant theme */
+    body {
+      background-color: #f5f5f5;
+      font-family: Merriweather, sans-serif; /* A more Indian-inspired font */
+      margin: 0;
+      padding: 0;
+      background-image: url("https://myfoodstory.com/wp-content/uploads/2018/09/The-Best-Chicken-Biryani-Recipe-3.jpg");  /* Add the background image here */
+    }
+
+    header {
+      background-color: #F8F8FF; /* Remove header background for better visibility */
+      padding: 20px;
+      text-align: center;
+      position: relative; /* Needed for absolute positioning of login buttons */
+    }
+     header h1 {
+      font-weight: bold; /* Add emphasis to the restaurant name */
+      color: #212529; /* Dark brown for a classic look */
+    }
+    .navigation-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* Divide the container into 3 columns */
+      grid-gap: 10px;  /* Add spacing between grid items */
+      padding: 5px; /* Add padding for better visual separation */
+      background-color: #fff;
+      border-radius: 5px; /* Rounded corners for navigation container */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box-shadow */
+      margin-bottom: 10px; /* Add some margin for spacing */
+    }
+    .navigation-container a {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      color: #c68642; /* Orange for navigation links */
+      font-weight: bold; /* Bold font weight */
+    }
+    main {
+      padding: 20px;
+    }
+    .featured-item {
+      background-color: #fff;
+      border-radius: 40px;
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 80px;
+      padding: 20px;
+      border: 1px solid #e0c38b;
+    }
+    .title {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      width: 100%;
+      background-color: #f5f5f5;
+      padding: 20px 0; /* Adjust padding as needed */
+      z-index: 999;
+    }
+    .login-buttons {
+      position: absolute;
+      top: 10px;
+      right: 10px; /* Adjust positioning as needed */
+    }
+    .login-buttons button {
+      background-color: #c68642; /* Orange for login button */
+      color: #fff;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .login-buttons button.logout {
+      background-color: #333; /* Dark gray for logout button */
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+        <h1><img src="" alt="KS Pulihora & Biryani's" width="150" height="100"></h1>
+        <div class="login-buttons">
+      <!-- Initially display login and register buttons -->
+      <button id="loginButton">Login</button>
+      <button id="registerButton">Register</button>
+    </div>
+        </div>
+    </header>
+    <nav>
+        <div class="navigation-container">
+            <a href="">Home</a>
+            <a href="#">Menu</a>
+            <a href="/contact/">Contact Us</a>
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="featured-item">
+                        <h3>Chef's Special</h3>
+                        <p>Try our mouthwatering [Biryani]! Made with the freshest ingredients and authentic Indian spices.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="featured-item">
+                        <h3>Flavors of India</h3>
+                        <p>Explore our diverse menu featuring regional specialties from all over India.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>© 2024 KS Pulihora & Biryani's</footer>
+	<script>
+	    // Add event listeners for login and register buttons
+	    document.getElementById("loginButton").addEventListener("click", function() {
+	      // Redirect to the login page
+	      window.location.href = "/login/";
+	    });
+
+	    document.getElementById("registerButton").addEventListener("click", function() {
+	      // Redirect to the register page
+	      window.location.href = "/register/";
+	    });
+	    
+	  </script>
+</body>
+</html>
+
