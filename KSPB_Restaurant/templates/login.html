@@ -4,24 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <style>
+        /* Styling for the login form and popup */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        }
+        .login-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); /* Box shadow for popup */
+            z-index: 9999;
+        }
+        .login-popup h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login-popup form {
+            text-align: center;
+        }
+        .login-popup label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .login-popup input[type="text"],
+        .login-popup input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .login-popup input[type="submit"] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 16px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .login-popup .register-link {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .login-popup .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        /* Hide the logout button initially */
+        .logout-button {
+            display: none;
+        }
+        /* Styling for the success message */
+        .success-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5); /* Box shadow for popup */
+            z-index: 9999;
+        }
+    </style>
 </head>
 <body>
-  <h2>Login</h2>
-    <form method="post">
+    <!-- Login Popup -->
+    <div class="login-popup">
+        <span class="close-button" onclick="closeLoginPopup()">&times;</span>
+        <h2>Login</h2>
+        <form id="loginForm" method="post" onsubmit="showSuccessMessage()">
         {% csrf_token %}
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password"><br>
-        <input type="submit" value="Login">
-    </form>
-    <div>
-        <a href="register/">Register</a> <!-- Link to registration page -->
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password"><br>
+            <input type="submit" value="Login">
+        </form>
+        <div class="register-link">
+            <a href="/register">Register</a> <!-- Link to registration page -->
+        </div>
     </div>
-    
-    
-    <form id="logout-form" style="display:none" action="/logout" method="POST"></form>
-    <button type="button" class="btn btn-danger" onclick="document.getElementById('logout-form').submit();">Logout</button>
+
+    <!-- Success Message Popup -->
+    <div class="success-message" id="successMessage">
+        <h2>Login Successful!</h2>
+    </div>
+
+    <!-- Script to show/hide login popup and success message -->
+    <script>
+        function openLoginPopup() {
+            document.querySelector('.login-popup').style.display = 'block';
+        }
+
+        function closeLoginPopup() {
+            document.querySelector('.login-popup').style.display = 'none';
+        }
+
+        function showSuccessMessage() {
+            document.getElementById('successMessage').style.display = 'block';
+        }
+    </script>
 </body>
 </html>
 
