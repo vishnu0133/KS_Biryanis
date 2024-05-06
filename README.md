@@ -19,11 +19,11 @@ To run the project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone <repository_url>
+   git clone https://github.com/vishnu0133/KS_Pulihora-Biryanis.git
    ```
 2. Navigate to the project directory:
    ```bash
-   cd KS_Pulihora-Biryani-s/KSPB_Restaurant/
+   cd KS_Pulihora-Biryanis/KSPB_Restaurant/
    ```
 3. Install the required dependencies:
    ```bash
