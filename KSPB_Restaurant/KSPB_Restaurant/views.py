@@ -40,7 +40,9 @@ def logout_view(request):
 def home_view(request):
     username = request.user.username
     return render(request, 'home.html', {'username': username})
-
     
+def menu_view(request):
+    return render(request, 'menu.html')
+
 def contact(request):
     return render(request, 'contact.html')

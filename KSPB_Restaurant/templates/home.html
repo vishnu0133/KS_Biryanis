@@ -25,25 +25,27 @@
       font-weight: bold; /* Add emphasis to the restaurant name */
       color: #212529; /* Dark brown for a classic look */
     }
-    .navigation-container {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* Divide the container into 3 columns */
-      grid-gap: 10px;  /* Add spacing between grid items */
-      padding: 5px; /* Add padding for better visual separation */
-      background-color: #fff;
-      border-radius: 5px; /* Rounded corners for navigation container */
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box-shadow */
-      margin-bottom: 10px; /* Add some margin for spacing */
-    }
-    .navigation-container a {
-      background-color: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      padding: 20px;
-      text-align: center;
-      color: #c68642; /* Orange for navigation links */
-      font-weight: bold; /* Bold font weight */
-    }
+  .navigation-container {
+  display: grid;
+  grid-template-columns: repeat(3, auto); /* Adjusted to use auto for flexible width */
+  grid-gap: 1px;  /* Add spacing between grid items */
+  padding: 3px; /* Add padding for better visual separation */
+  background-color: #fff;
+  border-radius: 5px; /* Rounded corners for navigation container */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box-shadow */
+  margin-bottom: 1px; /* Add some margin for spacing */
+}
+
+.navigation-container a {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 3px; /* Adjusted padding to decrease width */
+  text-align: center;
+  color: #c68642; /* Orange for navigation links */
+  font-weight: bold; /* Bold font weight */
+}
+
     main {
       padding: 20px;
     }
@@ -113,7 +115,7 @@
   <nav>
     <div class="navigation-container">
       <a href="">Home</a>
-      <a href="#">Menu</a>
+      <a href="/menu/">Menu</a>
       <a href="/contact/">Contact Us</a>
     </div>
   </nav>
@@ -145,7 +147,7 @@
 
     document.getElementById("registerButton").addEventListener("click", function() {
       // Redirect to the register page
-      window.location.href = "http://127.0.0.1:8000/register/";
+      window.location.href = "/register/";
     });
 
     // Function to confirm logout
